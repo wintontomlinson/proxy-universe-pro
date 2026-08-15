@@ -1,26 +1,207 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Colors - Dark Navy/Black Background */
+  --color-navy-950: #050816;
+  --color-navy-900: #08111F;
+  --color-navy-800: #0B1A2E;
+  --color-navy-700: #112240;
+  --color-navy-600: #1A3355;
+  --color-navy-500: #234E6E;
+
+  /* Electric Blue */
+  --color-electric-50: #EBF5FF;
+  --color-electric-100: #D6EBFF;
+  --color-electric-200: #AED8FF;
+  --color-electric-300: #7AC1FF;
+  --color-electric-400: #3BA5FF;
+  --color-electric-500: #0A84FF;
+  --color-electric-600: #006AE6;
+  --color-electric-700: #0052B3;
+  --color-electric-800: #003D80;
+  --color-electric-900: #00294D;
+
+  /* Violet/Purple */
+  --color-violet-50: #F5F0FF;
+  --color-violet-100: #EDE5FF;
+  --color-violet-200: #D4C4FF;
+  --color-violet-300: #B794FF;
+  --color-violet-400: #9B5FFF;
+  --color-violet-500: #7C3AFF;
+  --color-violet-600: #6B21E6;
+  --color-violet-700: #5615B3;
+  --color-violet-800: #420E80;
+  --color-violet-900: #2E094D;
+
+  /* Neon Cyan */
+  --color-cyan-400: #22D3EE;
+  --color-cyan-500: #06B6D4;
+
+  /* Semantic */
+  --color-background: #050816;
+  --color-foreground: #E2E8F0;
+  --color-muted: #94A3B8;
+  --color-card: rgba(11, 26, 46, 0.6);
+  --color-card-border: rgba(59, 165, 255, 0.15);
+  --color-card-hover: rgba(59, 165, 255, 0.25);
+
+  /* Success/Warning/Error */
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
+  --color-error: #EF4444;
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+
+  /* Border Radius */
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 28px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-navy-950);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-navy-600);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-electric-600);
+}
+
+/* Glassmorphism Utility */
+.glass {
+  background: rgba(11, 26, 46, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(59, 165, 255, 0.15);
+}
+
+.glass-strong {
+  background: rgba(11, 26, 46, 0.8);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid rgba(59, 165, 255, 0.2);
+}
+
+/* Glow Effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(10, 132, 255, 0.3), 0 0 60px rgba(10, 132, 255, 0.1);
+}
+
+.glow-violet {
+  box-shadow: 0 0 20px rgba(124, 58, 255, 0.3), 0 0 60px rgba(124, 58, 255, 0.1);
+}
+
+.glow-border {
+  box-shadow: 0 0 0 1px rgba(59, 165, 255, 0.3), 0 4px 30px rgba(10, 132, 255, 0.1);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, #3BA5FF, #7C3AFF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-blue {
+  background: linear-gradient(135deg, #0A84FF, #22D3EE);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient Button */
+.btn-gradient {
+  background: linear-gradient(135deg, #0A84FF, #7C3AFF);
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(135deg, #3BA5FF, #9B5FFF);
+  box-shadow: 0 0 30px rgba(10, 132, 255, 0.4), 0 0 60px rgba(124, 58, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Card Hover */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 165, 255, 0.4);
+  box-shadow: 0 20px 60px rgba(10, 132, 255, 0.15), 0 0 0 1px rgba(59, 165, 255, 0.3);
+}
+
+/* Animated Background Grid */
+.bg-grid {
+  background-image: 
+    linear-gradient(rgba(59, 165, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 165, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* Animated Gradient Orb */
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -30px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s ease-in-out 2s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Section Spacing */
+.section-spacing {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (min-width: 1024px) {
+  .section-spacing {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
 }
