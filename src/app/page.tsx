@@ -2,7 +2,6 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import TrustLogos from "@/components/TrustLogos";
 import Features from "@/components/Features";
-import DashboardPreview from "@/components/DashboardPreview";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
@@ -77,7 +76,6 @@ export default function Home() {
         <Hero />
         <TrustLogos />
         <Features />
-        <DashboardPreview />
         <WhyChooseUs />
         <Testimonials />
         <FAQ />
