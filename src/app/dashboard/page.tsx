@@ -105,15 +105,13 @@ export default function Dashboard() {
     <div className="min-h-screen bg-navy-950 flex">
       {/* Sidebar */}
       <aside className="hidden lg:flex flex-col w-64 border-r border-card-border bg-navy-900/50 fixed inset-y-0 left-0 z-30">
-        {/* Logo */}
         <div className="flex items-center gap-2 p-6 border-b border-card-border">
           <Hexagon className="w-7 h-7 text-electric-500" />
           <span className="text-sm font-bold font-[family-name:var(--font-space-grotesk)] text-white">
-            Proxy<span className="gradient-text">Universe</span> Pro
+            Nova<span className="gradient-text">Bridge</span>
           </span>
         </div>
 
-        {/* Nav Links */}
         <nav className="flex-1 p-4 space-y-1">
           {sidebarLinks.map((link) => (
             <button
@@ -130,7 +128,6 @@ export default function Dashboard() {
           ))}
         </nav>
 
-        {/* Bottom */}
         <div className="p-4 border-t border-card-border">
           <Link
             href="/"
@@ -146,7 +143,7 @@ export default function Dashboard() {
         </div>
       </aside>
 
-      {/* Main Content */}
+      {/* Main */}
       <div className="flex-1 lg:ml-64">
         {/* Top Bar */}
         <header className="sticky top-0 z-20 border-b border-card-border glass-strong">
@@ -155,9 +152,7 @@ export default function Dashboard() {
               <h1 className="text-lg font-bold text-white font-[family-name:var(--font-space-grotesk)]">
                 Dashboard
               </h1>
-              <p className="text-xs text-muted">
-                Welcome back, Alex
-              </p>
+              <p className="text-xs text-muted">Welcome back, Alex</p>
             </div>
             <div className="flex items-center gap-3">
               <button className="p-2 rounded-lg text-muted hover:text-white hover:bg-white/5 transition-all relative">
@@ -175,7 +170,7 @@ export default function Dashboard() {
           </div>
         </header>
 
-        {/* Dashboard Content */}
+        {/* Content */}
         <div className="p-6 lg:p-8 space-y-8">
           {/* Widgets */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -204,9 +199,8 @@ export default function Dashboard() {
             ))}
           </div>
 
-          {/* Charts Row */}
+          {/* Charts */}
           <div className="grid lg:grid-cols-3 gap-6">
-            {/* Bandwidth Chart */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -217,13 +211,10 @@ export default function Dashboard() {
                 <h3 className="text-sm font-semibold text-white">
                   Bandwidth Usage
                 </h3>
-                <div className="flex items-center gap-2">
-                  <span className="px-3 py-1 text-xs rounded-lg bg-electric-500/10 text-electric-400 border border-electric-500/20">
-                    This Month
-                  </span>
-                </div>
+                <span className="px-3 py-1 text-xs rounded-lg bg-electric-500/10 text-electric-400 border border-electric-500/20">
+                  This Month
+                </span>
               </div>
-              {/* Chart bars */}
               <div className="flex items-end gap-2 h-40">
                 {[35, 52, 48, 61, 55, 74, 62, 78, 56, 82, 75, 91, 68, 79, 85, 72, 77, 89, 81, 94, 76, 88, 82, 96, 85, 90, 87, 93, 88, 95].map(
                   (h, i) => (
@@ -244,7 +235,6 @@ export default function Dashboard() {
               </div>
             </motion.div>
 
-            {/* Spending */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -309,24 +299,12 @@ export default function Dashboard() {
               <table className="w-full">
                 <thead>
                   <tr className="text-left border-b border-card-border">
-                    <th className="pb-3 text-xs font-medium text-muted">
-                      Order ID
-                    </th>
-                    <th className="pb-3 text-xs font-medium text-muted">
-                      Product
-                    </th>
-                    <th className="pb-3 text-xs font-medium text-muted hidden sm:table-cell">
-                      Qty
-                    </th>
-                    <th className="pb-3 text-xs font-medium text-muted">
-                      Status
-                    </th>
-                    <th className="pb-3 text-xs font-medium text-muted hidden md:table-cell">
-                      Date
-                    </th>
-                    <th className="pb-3 text-xs font-medium text-muted text-right">
-                      Amount
-                    </th>
+                    <th className="pb-3 text-xs font-medium text-muted">Order ID</th>
+                    <th className="pb-3 text-xs font-medium text-muted">Product</th>
+                    <th className="pb-3 text-xs font-medium text-muted hidden sm:table-cell">Qty</th>
+                    <th className="pb-3 text-xs font-medium text-muted">Status</th>
+                    <th className="pb-3 text-xs font-medium text-muted hidden md:table-cell">Date</th>
+                    <th className="pb-3 text-xs font-medium text-muted text-right">Amount</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -335,15 +313,9 @@ export default function Dashboard() {
                       key={order.id}
                       className="border-b border-card-border/50 hover:bg-white/5 transition-colors"
                     >
-                      <td className="py-4 text-sm text-white font-medium">
-                        {order.id}
-                      </td>
-                      <td className="py-4 text-sm text-muted">
-                        {order.product}
-                      </td>
-                      <td className="py-4 text-sm text-muted hidden sm:table-cell">
-                        {order.quantity}
-                      </td>
+                      <td className="py-4 text-sm text-white font-medium">{order.id}</td>
+                      <td className="py-4 text-sm text-muted">{order.product}</td>
+                      <td className="py-4 text-sm text-muted hidden sm:table-cell">{order.quantity}</td>
                       <td className="py-4">
                         <span
                           className={`px-2.5 py-1 text-xs rounded-full ${
@@ -355,12 +327,8 @@ export default function Dashboard() {
                           {order.status}
                         </span>
                       </td>
-                      <td className="py-4 text-sm text-muted hidden md:table-cell">
-                        {order.date}
-                      </td>
-                      <td className="py-4 text-sm text-white font-medium text-right">
-                        {order.amount}
-                      </td>
+                      <td className="py-4 text-sm text-muted hidden md:table-cell">{order.date}</td>
+                      <td className="py-4 text-sm text-white font-medium text-right">{order.amount}</td>
                     </tr>
                   ))}
                 </tbody>

@@ -8,32 +8,32 @@ const faqs = [
   {
     question: "What proxy types do you offer?",
     answer:
-      "We offer four main proxy types: Residential proxies (35M+ rotating IPs), ISP proxies (static residential IPs), Datacenter proxies (high-speed dedicated IPs), and Mobile proxies (4G/5G carrier IPs). Each type is available from multiple verified providers on our marketplace.",
+      "We offer four main categories: Residential proxies (35M+ rotating IPs), ISP proxies (static residential IPs), Datacenter proxies (high-speed dedicated IPs) and Mobile proxies (4G/5G carrier IPs). Each type is sourced from multiple verified providers on our marketplace.",
   },
   {
     question: "How fast is delivery?",
     answer:
-      "Delivery is instant. Once your payment is confirmed, your proxy credentials and access details are generated automatically and available in your dashboard within seconds. No manual review or waiting period required.",
+      "Instant. Once payment confirms, your proxy credentials and access details generate automatically and appear in your dashboard within seconds. No manual review, no waiting.",
   },
   {
     question: "Do you provide API access?",
     answer:
-      "Yes! We provide a comprehensive REST API that lets you manage proxies, rotate IPs, check bandwidth usage, generate credentials, and automate purchases. We also offer SDKs for Python, Node.js, Go, Java, and PHP.",
+      "Yes. We offer a full REST API for managing proxies, rotating IPs, checking bandwidth, generating credentials and automating purchases. SDKs available for Python, Node.js, Go, Java and PHP.",
   },
   {
     question: "Can I rotate IPs?",
     answer:
-      "Absolutely. Our residential and mobile proxies support automatic IP rotation with configurable intervals (every request, every 1/5/10/30 minutes, or sticky sessions). You can also trigger manual rotation via API or dashboard.",
+      "Absolutely. Residential and mobile proxies support automatic rotation with configurable intervals (per request, every 1/5/10/30 minutes, or sticky sessions). You can also trigger manual rotation via API or from the dashboard.",
   },
   {
     question: "Is bandwidth unlimited?",
     answer:
-      "We offer both metered and unlimited bandwidth plans depending on the proxy type and provider. Datacenter proxies typically include unlimited bandwidth, while residential and mobile proxies are billed per GB with generous volume discounts.",
+      "We offer both metered and unlimited plans depending on proxy type and provider. Datacenter proxies typically include unlimited bandwidth. Residential and mobile are billed per GB with generous volume discounts.",
   },
   {
     question: "What payment methods are supported?",
     answer:
-      "We accept all major credit cards (Visa, Mastercard, Amex), PayPal, cryptocurrency (Bitcoin, Ethereum, USDT), bank transfers, and popular local payment methods. Enterprise customers can also pay via invoice with NET-30 terms.",
+      "We accept all major credit cards (Visa, Mastercard, Amex), PayPal, crypto (Bitcoin, Ethereum, USDT), bank transfers and popular local payment methods. Enterprise customers can pay via invoice with NET-30 terms.",
   },
 ];
 
@@ -43,7 +43,6 @@ export default function FAQ() {
   return (
     <section className="section-spacing relative">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -60,7 +59,6 @@ export default function FAQ() {
           </p>
         </motion.div>
 
-        {/* Accordion */}
         <div className="space-y-3">
           {faqs.map((faq, i) => (
             <motion.div

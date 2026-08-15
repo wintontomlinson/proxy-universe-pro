@@ -6,24 +6,24 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Alex Chen",
-    role: "CTO at DataScrape Inc.",
+    role: "CTO, DataScrape Inc.",
     avatar: "AC",
     rating: 5,
-    text: "ProxyUniverse Pro transformed our data collection pipeline. The residential proxies have a 99.7% success rate on even the toughest targets. Best investment we made this year.",
+    text: "NovaBridge completely changed our data pipeline. Residential proxies hit a 99.7% success rate on the toughest targets. Best investment we made this year.",
   },
   {
     name: "Sarah Mitchell",
-    role: "Lead Engineer at WebFlow",
+    role: "Lead Engineer, WebFlow",
     avatar: "SM",
     rating: 5,
-    text: "The API is incredibly developer-friendly. We integrated their proxy rotation into our system in under 2 hours. The documentation is top-notch and support responds in minutes.",
+    text: "The API is incredibly clean. We had proxy rotation integrated into our system in under 2 hours. Docs are solid and support responds in minutes, not hours.",
   },
   {
     name: "Marcus Rodriguez",
-    role: "Founder of ScaleBot",
+    role: "Founder, ScaleBot",
     avatar: "MR",
     rating: 5,
-    text: "Switched from our previous provider and saw a 40% improvement in success rates overnight. The marketplace model lets us pick the best provider for each use case.",
+    text: "Switched from our previous provider and saw 40% better success rates overnight. The marketplace model lets us pick the right provider for each use case.",
   },
 ];
 
@@ -31,7 +31,6 @@ export default function Testimonials() {
   return (
     <section className="section-spacing relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,12 +42,11 @@ export default function Testimonials() {
             Loved by <span className="gradient-text">Developers</span>
           </h2>
           <p className="text-lg text-muted max-w-2xl mx-auto">
-            Join thousands of companies that trust ProxyUniverse Pro for their
-            proxy infrastructure.
+            Thousands of companies trust NovaBridge for their proxy
+            infrastructure.
           </p>
         </motion.div>
 
-        {/* Testimonial Cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, i) => (
             <motion.div
@@ -59,7 +57,6 @@ export default function Testimonials() {
               transition={{ duration: 0.6, delay: i * 0.15 }}
               className="glass rounded-3xl p-7 card-hover"
             >
-              {/* Stars */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, j) => (
                   <Star
@@ -69,12 +66,10 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              {/* Text */}
               <p className="text-muted leading-relaxed mb-6 text-sm">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
 
-              {/* Author */}
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-electric-500 to-violet-500 flex items-center justify-center">
                   <span className="text-xs font-bold text-white">

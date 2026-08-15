@@ -48,18 +48,18 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Left - Logo */}
+            {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
               <div className="relative">
                 <Hexagon className="w-8 h-8 text-electric-500 group-hover:text-electric-400 transition-colors" />
                 <div className="absolute inset-0 w-8 h-8 bg-electric-500/20 rounded-full blur-lg group-hover:bg-electric-400/30 transition-all" />
               </div>
               <span className="text-lg font-bold font-[family-name:var(--font-space-grotesk)] text-white">
-                Proxy<span className="gradient-text">Universe</span> Pro
+                Nova<span className="gradient-text">Bridge</span>
               </span>
             </Link>
 
-            {/* Center - Navigation */}
+            {/* Center Navigation */}
             <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => (
                 <Link
@@ -72,7 +72,7 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Right - Actions */}
+            {/* Right Actions */}
             <div className="flex items-center gap-2">
               <button
                 className="hidden sm:flex p-2 rounded-lg text-muted hover:text-white hover:bg-white/5 transition-all"
@@ -107,7 +107,7 @@ export default function Navbar() {
                 Get Started
               </Link>
 
-              {/* Mobile Menu Toggle */}
+              {/* Mobile Menu */}
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
                 className="lg:hidden p-2 rounded-lg text-muted hover:text-white hover:bg-white/5 transition-all"
@@ -124,7 +124,7 @@ export default function Navbar() {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Panel */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div

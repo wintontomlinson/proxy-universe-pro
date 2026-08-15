@@ -24,7 +24,7 @@ const providerData = {
   rating: 4.9,
   reviews: 1567,
   description:
-    "Enterprise-grade ISP proxies with static residential IPs from major internet service providers. Perfect for accounts management, sneaker botting, and high-value targets that require consistent IP addresses.",
+    "Enterprise-grade ISP proxies with static residential IPs from major internet service providers. Ideal for account management, sneaker automation and high-value targets that need consistent IP addresses.",
   features: [
     "Static residential IPs",
     "Major ISP networks (Comcast, AT&T, Verizon)",
@@ -46,19 +46,19 @@ const providerData = {
       name: "David K.",
       rating: 5,
       date: "2 days ago",
-      text: "Best ISP proxies I've used. Zero bans in 3 months of heavy use.",
+      text: "Best ISP proxies I have used. Zero bans in 3 months of heavy use.",
     },
     {
       name: "Emma W.",
       rating: 5,
       date: "1 week ago",
-      text: "The static IPs are perfect for managing multiple accounts. Great stability.",
+      text: "Static IPs are perfect for managing multiple accounts. Stability is excellent.",
     },
     {
       name: "James L.",
       rating: 4,
       date: "2 weeks ago",
-      text: "Solid quality. Wish there were more EU locations but US coverage is amazing.",
+      text: "Solid quality. Would love more EU locations but US coverage is fantastic.",
     },
   ],
 };
@@ -77,7 +77,6 @@ export default function ProductPage() {
       <Navbar />
       <main className="pt-24 pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Breadcrumb */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -93,7 +92,7 @@ export default function ProductPage() {
           </motion.div>
 
           <div className="grid lg:grid-cols-3 gap-8">
-            {/* Left Side - Product Info */}
+            {/* Left: Product Info */}
             <div className="lg:col-span-2 space-y-8">
               {/* Header */}
               <motion.div
@@ -171,7 +170,7 @@ export default function ProductPage() {
                           {loc.country}
                         </p>
                         <p className="text-xs text-muted">
-                          {loc.cities} cities • {loc.ips} IPs
+                          {loc.cities} cities, {loc.ips} IPs
                         </p>
                       </div>
                     </div>
@@ -225,7 +224,7 @@ export default function ProductPage() {
               </motion.div>
             </div>
 
-            {/* Right Side - Purchase Card (Sticky) */}
+            {/* Right: Purchase Card */}
             <div className="lg:col-span-1">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -245,9 +244,7 @@ export default function ProductPage() {
                     </label>
                     <div className="flex items-center gap-3">
                       <button
-                        onClick={() =>
-                          setQuantity(Math.max(1, quantity - 1))
-                        }
+                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
                         className="w-10 h-10 rounded-xl glass flex items-center justify-center text-white hover:bg-white/5 transition-colors"
                       >
                         <Minus className="w-4 h-4" />
@@ -325,7 +322,7 @@ export default function ProductPage() {
                     </div>
                   </div>
 
-                  {/* Divider */}
+                  {/* Total */}
                   <div className="border-t border-card-border pt-5 mb-5">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-sm text-muted">Subtotal</span>
@@ -347,13 +344,11 @@ export default function ProductPage() {
                     </div>
                   </div>
 
-                  {/* CTA */}
                   <button className="w-full px-6 py-4 text-base font-medium text-white rounded-2xl btn-gradient flex items-center justify-center gap-2">
                     <Zap className="w-4 h-4" />
                     Buy Now
                   </button>
 
-                  {/* Trust signals */}
                   <div className="mt-4 space-y-2">
                     {[
                       { icon: Zap, text: "Instant activation" },

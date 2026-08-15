@@ -2,7 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Zap, Globe, Clock, Shield } from "lucide-react";
+import { Zap } from "lucide-react";
 
 const proxyTypes = [
   { name: "Residential", pricePerGB: 2.5 },
@@ -41,7 +41,9 @@ export default function PricingCalculator() {
     const basePrice = type.pricePerGB * bandwidth;
     const totalPrice = basePrice * duration.multiplier;
     const pricePerGB = (totalPrice / bandwidth).toFixed(2);
-    const estimatedIPs = Math.floor(bandwidth * (type.name === "Datacenter" ? 50 : type.name === "ISP" ? 10 : 20));
+    const estimatedIPs = Math.floor(
+      bandwidth * (type.name === "Datacenter" ? 50 : type.name === "ISP" ? 10 : 20)
+    );
 
     return {
       totalPrice: totalPrice.toFixed(2),
@@ -53,7 +55,6 @@ export default function PricingCalculator() {
   return (
     <section id="pricing" className="section-spacing relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,12 +66,11 @@ export default function PricingCalculator() {
             Pricing <span className="gradient-text">Calculator</span>
           </h2>
           <p className="text-lg text-muted max-w-2xl mx-auto">
-            Estimate your costs instantly. Transparent pricing with volume
-            discounts.
+            Get an instant estimate. Transparent pricing with volume
+            discounts, no hidden fees.
           </p>
         </motion.div>
 
-        {/* Calculator Card */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,9 +79,9 @@ export default function PricingCalculator() {
           className="glass rounded-3xl overflow-hidden max-w-5xl mx-auto"
         >
           <div className="grid lg:grid-cols-2">
-            {/* Left Side - Controls */}
+            {/* Controls */}
             <div className="p-8 lg:p-10 space-y-8">
-              {/* Bandwidth Slider */}
+              {/* Bandwidth */}
               <div>
                 <div className="flex items-center justify-between mb-3">
                   <label className="text-sm font-medium text-white">
@@ -168,7 +168,7 @@ export default function PricingCalculator() {
               </div>
             </div>
 
-            {/* Right Side - Results */}
+            {/* Results */}
             <div className="p-8 lg:p-10 bg-gradient-to-br from-electric-500/5 to-violet-500/5 border-t lg:border-t-0 lg:border-l border-card-border flex flex-col justify-between">
               <div>
                 <h3 className="text-lg font-medium text-white mb-6">
@@ -180,8 +180,7 @@ export default function PricingCalculator() {
                     ${calculation.totalPrice}
                   </div>
                   <p className="text-muted">
-                    for {bandwidth} GB •{" "}
-                    {durations[durationIndex].label}
+                    for {bandwidth} GB, {durations[durationIndex].label}
                   </p>
                 </div>
 

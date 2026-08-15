@@ -14,7 +14,6 @@ export default function DashboardPreview() {
   return (
     <section className="section-spacing relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,12 +25,11 @@ export default function DashboardPreview() {
             Powerful <span className="gradient-text">Dashboard</span>
           </h2>
           <p className="text-lg text-muted max-w-2xl mx-auto">
-            Monitor your proxies, track bandwidth, and manage everything from
-            one beautiful interface.
+            Monitor proxies, track bandwidth and manage everything from
+            a single interface.
           </p>
         </motion.div>
 
-        {/* Dashboard Mockup */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -39,21 +37,20 @@ export default function DashboardPreview() {
           transition={{ duration: 0.8 }}
           className="relative"
         >
-          {/* Glow behind */}
           <div className="absolute inset-0 bg-electric-500/5 rounded-3xl blur-3xl" />
 
           <div className="relative glass rounded-3xl p-6 lg:p-8 glow-border">
-            {/* Top Bar */}
+            {/* Browser chrome */}
             <div className="flex items-center gap-2 mb-6">
               <div className="w-3 h-3 rounded-full bg-error/60" />
               <div className="w-3 h-3 rounded-full bg-warning/60" />
               <div className="w-3 h-3 rounded-full bg-success/60" />
               <span className="ml-4 text-xs text-muted">
-                dashboard.proxyuniverse.pro
+                dashboard.novabridge.io
               </span>
             </div>
 
-            {/* Widgets Grid */}
+            {/* Widgets */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               {dashWidgets.map((widget, i) => (
                 <motion.div
@@ -76,7 +73,7 @@ export default function DashboardPreview() {
               ))}
             </div>
 
-            {/* Fake Chart Area */}
+            {/* Chart + Actions */}
             <div className="grid lg:grid-cols-3 gap-4">
               <div className="lg:col-span-2 bg-navy-800/50 rounded-2xl p-5 border border-card-border">
                 <div className="flex items-center justify-between mb-4">
@@ -85,7 +82,6 @@ export default function DashboardPreview() {
                   </span>
                   <span className="text-xs text-muted">Last 30 days</span>
                 </div>
-                {/* Simulated chart bars */}
                 <div className="flex items-end gap-1.5 h-32">
                   {[40, 65, 45, 70, 55, 80, 60, 75, 50, 85, 70, 90, 65, 78, 82, 68, 72, 88, 76, 92, 70, 85, 78, 95, 80, 88, 82, 90, 85, 92].map(
                     (h, i) => (
@@ -102,7 +98,6 @@ export default function DashboardPreview() {
                 </div>
               </div>
 
-              {/* Quick Actions */}
               <div className="bg-navy-800/50 rounded-2xl p-5 border border-card-border">
                 <span className="text-sm font-medium text-white block mb-4">
                   Quick Actions

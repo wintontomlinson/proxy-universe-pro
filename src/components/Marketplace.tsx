@@ -103,7 +103,6 @@ export default function Marketplace() {
   return (
     <section id="marketplace" className="section-spacing relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -115,12 +114,12 @@ export default function Marketplace() {
             Proxy <span className="gradient-text">Marketplace</span>
           </h2>
           <p className="text-lg text-muted max-w-2xl mx-auto">
-            Choose from top-tier proxy providers with verified reviews and
-            instant activation.
+            Verified providers with real reviews and instant activation.
+            Pick the right fit for your use case.
           </p>
         </motion.div>
 
-        {/* Search & Filters */}
+        {/* Search and Filters */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +127,6 @@ export default function Marketplace() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="mb-8"
         >
-          {/* Search Bar */}
           <div className="relative max-w-md mx-auto mb-6">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted" />
             <input
@@ -140,7 +138,6 @@ export default function Marketplace() {
             />
           </div>
 
-          {/* Filter Tabs */}
           <div className="flex flex-wrap items-center justify-center gap-2">
             {filters.map((filter) => (
               <button
@@ -158,7 +155,7 @@ export default function Marketplace() {
           </div>
         </motion.div>
 
-        {/* Provider Grid */}
+        {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProviders.map((provider, i) => (
             <motion.div
@@ -171,7 +168,6 @@ export default function Marketplace() {
             >
               <Link href={`/marketplace/${provider.id}`} className="block">
                 <div className="glass rounded-3xl p-6 card-hover h-full relative overflow-hidden group">
-                  {/* Badge */}
                   {provider.badge && (
                     <div className="absolute top-4 right-4">
                       <span className="px-3 py-1 text-xs font-medium rounded-full bg-electric-500/20 text-electric-300 border border-electric-500/30">
@@ -180,7 +176,6 @@ export default function Marketplace() {
                     </div>
                   )}
 
-                  {/* Provider Icon & Name */}
                   <div className="flex items-center gap-3 mb-4">
                     <div
                       className={`w-12 h-12 rounded-xl bg-gradient-to-br ${
@@ -201,7 +196,6 @@ export default function Marketplace() {
                     </div>
                   </div>
 
-                  {/* Rating */}
                   <div className="flex items-center gap-2 mb-4">
                     <div className="flex items-center gap-1">
                       <Star className="w-4 h-4 text-warning fill-warning" />
@@ -214,7 +208,6 @@ export default function Marketplace() {
                     </span>
                   </div>
 
-                  {/* Locations */}
                   <div className="flex items-center gap-2 mb-5">
                     <MapPin className="w-3.5 h-3.5 text-muted" />
                     <div className="flex flex-wrap gap-1">
@@ -229,7 +222,6 @@ export default function Marketplace() {
                     </div>
                   </div>
 
-                  {/* Price & CTA */}
                   <div className="flex items-center justify-between pt-4 border-t border-card-border">
                     <div>
                       <span className="text-sm text-muted">From</span>
